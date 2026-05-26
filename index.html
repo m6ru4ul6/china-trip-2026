@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2026 杭州・烏鎮・上海行程</title>
+    <link rel="preconnect" href="https://commons.wikimedia.org" />
+    <link rel="preconnect" href="https://upload.wikimedia.org" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="網站導覽">
+      <a class="brand" href="#overview" aria-label="回到總覽">
+        <span class="brand-mark">江</span>
+        <span>杭州、烏鎮、上海六日遊</span>
+      </a>
+      <nav class="top-nav" aria-label="主要導覽">
+        <a href="#overview">總覽</a>
+        <a href="#itinerary">行程</a>
+        <a href="#transport">交通</a>
+        <a href="#hotels">住宿</a>
+        <a href="#places">景點</a>
+        <a href="#checklist">待辦</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">2026/6/6 - 2026/6/11</p>
+          <h1>杭州、烏鎮、上海6天5夜</h1>
+          <p class="hero-summary">
+            從上海虹橋入境，先到杭州走南宋文化與西湖，再連住烏鎮兩晚，最後入住全球第三高大樓上海中心J飯店，看豫園、城隍廟與外灘夜景。
+          </p>
+          <div class="hero-actions" aria-label="快速前往">
+            <a href="#itinerary" class="button primary">看每日行程</a>
+            <a href="#checklist" class="button secondary">看出發前待辦</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="route-band" aria-label="每日快速行程">
+        <div class="route-inner" id="routeQuickNav"></div>
+      </section>
+
+      <section class="section dashboard-section">
+        <div class="section-heading">
+          <p class="section-kicker">Dashboard</p>
+          <h2>旅程總覽</h2>
+        </div>
+        <div class="dashboard-grid" id="dashboardCards"></div>
+      </section>
+
+      <section class="section itinerary-section" id="itinerary">
+        <div class="section-heading with-actions">
+          <div>
+            <p class="section-kicker">Itinerary</p>
+            <h2>每日行程</h2>
+          </div>
+          <div class="day-tabs" id="dayTabs" aria-label="選擇日期"></div>
+        </div>
+        <div class="itinerary-board" id="itineraryBoard"></div>
+      </section>
+
+      <section class="section transport-section" id="transport">
+        <div class="section-heading">
+          <p class="section-kicker">Transport</p>
+          <h2>交通與航班</h2>
+        </div>
+        <div class="transport-layout">
+          <div class="panel">
+            <h3>已確認航班</h3>
+            <div class="flight-list" id="flightList"></div>
+          </div>
+          <div class="panel">
+            <h3>主要移動段落</h3>
+            <div class="transfer-list" id="transferList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section hotels-section" id="hotels">
+        <div class="section-heading with-actions">
+          <div>
+            <p class="section-kicker">Hotels</p>
+            <h2>住宿安排</h2>
+          </div>
+          <div class="segmented-control" id="hotelFilters" aria-label="住宿城市篩選"></div>
+        </div>
+        <div class="hotel-grid" id="hotelGrid"></div>
+      </section>
+
+      <section class="section places-section" id="places">
+        <div class="section-heading with-actions">
+          <div>
+            <p class="section-kicker">Places</p>
+            <h2>景點資料庫</h2>
+          </div>
+          <div class="segmented-control" id="placeFilters" aria-label="景點城市篩選"></div>
+        </div>
+        <div class="place-grid" id="placeGrid"></div>
+      </section>
+
+      <section class="section checklist-section" id="checklist">
+        <div class="section-heading with-actions">
+          <div>
+            <p class="section-kicker">Checklist</p>
+            <h2>出發前待辦</h2>
+          </div>
+          <button class="button small" id="resetChecklist" type="button">重設待辦</button>
+        </div>
+        <div class="checklist-shell">
+          <div class="checklist-summary" id="checklistSummary"></div>
+          <div class="checklist-list" id="checklistList"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <nav class="bottom-nav" aria-label="手機導覽">
+      <a href="#overview">總覽</a>
+      <a href="#itinerary">行程</a>
+      <a href="#transport">交通</a>
+      <a href="#hotels">住宿</a>
+      <a href="#checklist">待辦</a>
+    </nav>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
