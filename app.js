@@ -365,6 +365,14 @@ function renderPlaces() {
       });
 
       content.append(tags, createElement("h3", "", place.name), createElement("p", "", place.description), details);
+      if (place.guide) {
+        const guideLink = createElement("a", "place-link", `閱讀：${place.guide.title}`);
+        guideLink.href = place.guide.url;
+        guideLink.target = "_blank";
+        guideLink.rel = "noopener noreferrer";
+        guideLink.setAttribute("aria-label", `閱讀 ${place.name} 的中文遊記或介紹`);
+        content.append(guideLink);
+      }
       article.append(image, content);
       return article;
     }),
@@ -409,6 +417,44 @@ function renderChecklist() {
   );
 }
 
+function renderPreparation() {
+  const grid = $("#preDepartureGrid");
+  if (!grid) return;
+
+  grid.replaceChildren(
+    ...preDeparturePrep.map((section) => {
+      const card = createElement("article", "prep-card");
+      const list = document.createElement("ul");
+      section.items.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.append(li);
+      });
+
+      card.append(
+        createElement("span", "prep-label", section.highlight),
+        createElement("h3", "", section.title),
+        list,
+      );
+      return card;
+    }),
+  );
+
+  const sources = $("#preDepartureSources");
+  if (!sources) return;
+  sources.replaceChildren(document.createTextNode("參考："));
+  preDepartureSources.forEach((source, index) => {
+    const link = createElement("a", "", source.label);
+    link.href = source.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    sources.append(link);
+    if (index < preDepartureSources.length - 1) {
+      sources.append(document.createTextNode("、"));
+    }
+  });
+}
+
 function bindResetChecklist() {
   $("#resetChecklist").addEventListener("click", () => {
     checklistState = {};
@@ -431,6 +477,7 @@ function init() {
   renderPlaceFilters();
   renderPlaces();
   renderChecklist();
+  renderPreparation();
   bindResetChecklist();
 }
 

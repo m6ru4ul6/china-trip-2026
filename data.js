@@ -112,7 +112,7 @@ const itineraryDays = [
         type: "culture",
         required: true,
         reservation: true,
-        detail: "本次杭州南宋文化線的核心景點；改排宮宴後面，需確認 6/7 下午預約時段。",
+        detail: "本次杭州南宋文化線的核心景點；改排宮宴後面，6/5 09:00 起開放預約 6/7 下午時段。",
       },
       {
         time: "下午晚些",
@@ -339,9 +339,13 @@ const places = [
     priority: "必排",
     image: images.deshou,
     hours: "約 9:30-17:00，週一閉館",
-    reminder: "排在杭州宮宴後，需預約 6/7 下午時段。",
+    reminder: "6/5 09:00 起開放預約 6/7 下午時段；排在杭州宮宴後。",
     description:
       "本次杭州南宋文化線的核心景點，可以理解南宋臨安宮廷生活與宋韻美學。",
+    guide: {
+      title: "helloninie｜南宋德壽宮遺址博物館",
+      url: "https://wwwyoko-helloninie.blogspot.com/2025/07/blog-post.html",
+    },
   },
   {
     name: "杭州宮宴",
@@ -354,6 +358,10 @@ const places = [
     reminder: "午宴若要治裝，10:00 需抵達現場。",
     description:
       "融合宮廷服飾、禮儀、歌舞與中式宴席，是本次餐飲重點體驗。",
+    guide: {
+      title: "ReadyGo｜杭州宮宴沉浸式體驗",
+      url: "https://imreadygo.com/218818/",
+    },
   },
   {
     name: "南宋御街",
@@ -366,6 +374,10 @@ const places = [
     reminder: "接在德壽宮後慢走最順。",
     description:
       "宋韻感集中的街區，連結宮廷、老城、商業街與市井生活。",
+    guide: {
+      title: "阿東的旅行誌｜西湖、南宋御街與河坊街",
+      url: "https://yanyang.pixnet.net/blog/posts/878321035566901846",
+    },
   },
   {
     name: "河坊街／清河坊",
@@ -378,6 +390,10 @@ const places = [
     reminder: "適合作為杭州老城散步收尾。",
     description:
       "杭州保存較完整的古城區之一，有小吃、老字號、茶葉與手工藝。",
+    guide: {
+      title: "讚讚小屋｜杭州河坊街美食與老街",
+      url: "https://zanzan.tw/archives/53400",
+    },
   },
   {
     name: "西湖湖濱",
@@ -390,6 +406,10 @@ const places = [
     reminder: "6/7 下午視體力補上。",
     description:
       "若老街行程結束後體力還夠，可補一段湖濱短散步，不硬排長時間遊湖。",
+    guide: {
+      title: "Fishagrams｜杭州自由行與西湖湖濱",
+      url: "https://www.fishagrams.com/hangzhou-travel-guide/",
+    },
   },
   {
     name: "靈隱寺",
@@ -402,6 +422,10 @@ const places = [
     reminder: "飛來峰景區與靈隱寺分別收費。",
     description:
       "杭州最具代表性的寺院之一，適合早上安排山林、古剎與石刻。",
+    guide: {
+      title: "茉茉愛旅行｜杭州靈隱寺與飛來峰",
+      url: "https://www.mozaiyang.com/blog/post/lingyinsi",
+    },
   },
   {
     name: "梅家塢茶村",
@@ -414,6 +438,10 @@ const places = [
     reminder: "已改為可選，視 6/8 時間與體力安排。",
     description:
       "龍井茶重要產區，可把午餐、茶村、茶館與茶山放在一起安排。",
+    guide: {
+      title: "Q妞旅遊生活｜梅家塢龍井茶文化村",
+      url: "https://www.qqquu.com/3886.html",
+    },
   },
   {
     name: "西湖精華段",
@@ -426,6 +454,10 @@ const places = [
     reminder: "不用硬走整圈，可選精華段。",
     description:
       "可選湖濱白堤、船遊三潭印月、蘇堤花港觀魚或雷峰塔外觀。",
+    guide: {
+      title: "馬克的足跡｜杭州西湖一日遊攻略",
+      url: "https://marksfootprint.tw/west-lake-cultural-landscape-of-hangzhou/",
+    },
   },
   {
     name: "烏鎮西柵",
@@ -438,6 +470,10 @@ const places = [
     reminder: "住宿最好確認是否含門票與接駁；入住時向老闆預約早茶客。",
     description:
       "這次烏鎮住兩晚，西柵可看夜景、清晨與白天三種不同節奏。",
+    guide: {
+      title: "雙妡媽咪旅行ING｜烏鎮兩天一夜攻略",
+      url: "https://heidihihi.com/wuzhen/",
+    },
   },
   {
     name: "烏鎮東柵",
@@ -450,6 +486,10 @@ const places = [
     reminder: "慢遊版可只逛西柵。",
     description:
       "比西柵更偏傳統生活與歷史感，適合想把烏鎮走完整一點時加入。",
+    guide: {
+      title: "Go Travelling World｜烏鎮東柵西柵攻略",
+      url: "https://gotravellingworld.com/wuzhen-tourism/",
+    },
   },
   {
     name: "豫園",
@@ -462,6 +502,10 @@ const places = [
     reminder: "從陸家嘴入住後再前往老城區。",
     description:
       "上海古典園林代表，和城隍廟同區，適合作為上海半日主軸。",
+    guide: {
+      title: "小林趴趴走｜上海豫園與老城遊記",
+      url: "https://magic22s.pixnet.net/blog/posts/13364961359",
+    },
   },
   {
     name: "城隍廟",
@@ -474,6 +518,10 @@ const places = [
     reminder: "和豫園安排在同一段最省移動。",
     description:
       "小吃、老字號、街景與豫園商圈集中，可和豫園合併成上海老城半日。",
+    guide: {
+      title: "義烏趣｜上海城隍廟與豫園攻略",
+      url: "https://yiwutrip.tw/shachenghuang-miao/",
+    },
   },
   {
     name: "南京路步行街",
@@ -486,6 +534,10 @@ const places = [
     reminder: "可接在外灘前後，視時間、人潮與體力安排。",
     description:
       "上海代表性的商業步行街，霓虹街景與老字號集中，適合補一段輕鬆散步。",
+    guide: {
+      title: "大衛營｜南京路步行街路線延伸",
+      url: "https://www.davidwin.net/?p=19449",
+    },
   },
   {
     name: "外灘",
@@ -498,6 +550,10 @@ const places = [
     reminder: "適合上海唯一一晚安排。",
     description:
       "上海最具代表性的夜景區域之一，可看黃浦江、歷史建築與浦東天際線。",
+    guide: {
+      title: "大衛營｜外灘萬國建築博覽會攻略",
+      url: "https://www.davidwin.net/?p=24133",
+    },
   },
 ];
 
@@ -525,15 +581,99 @@ const transfers = [
 ];
 
 const checklist = [
-  { item: "確認 6/6 航班號與登機時間", status: "pending", category: "flight" },
-  { item: "確認 6/11 回程航班號與報到時間", status: "pending", category: "flight" },
-  { item: "預約德壽宮 6/7 下午時段", status: "todo", category: "reservation" },
+  { item: "6/6 去程 CA198：台北松山 TSA → 上海虹橋 SHA，17:10 抵達", status: "pending", category: "flight" },
+  { item: "6/11 回程 CA197：上海虹橋 SHA → 台北松山 TSA，12:15 起飛", status: "pending", category: "flight" },
+  { item: "預約德壽宮 6/7 下午時段（6/5 09:00 開放）", status: "todo", category: "reservation" },
   { item: "確認杭州宮宴 6/7 10:00 治裝與午宴場次", status: "todo", category: "reservation" },
-  { item: "確認杭州 Pagoda君亭設計飯店 6/6-6/8 訂房細節", status: "todo", category: "hotel" },
-  { item: "確認烏鎮民宿 6/8-6/10 是否含西柵門票與接駁", status: "todo", category: "hotel" },
   { item: "烏鎮入住時向老闆預約早茶客", status: "todo", category: "hotel" },
-  { item: "確認上海中心J飯店 6/10-6/11 訂房細節", status: "todo", category: "hotel" },
-  { item: "查詢上海虹橋到杭州高鐵", status: "todo", category: "transport" },
   { item: "安排杭州到烏鎮交通", status: "todo", category: "transport" },
   { item: "安排烏鎮到上海中心J飯店交通", status: "todo", category: "transport" },
+];
+
+const preDeparturePrep = [
+  {
+    title: "衣物",
+    highlight: "短袖為主，外套一件",
+    items: [
+      "短袖上衣 5-6 套，內衣襪 6-7 套。",
+      "薄外套 1 件：機艙、飯店冷氣、烏鎮清晨用。",
+      "好走鞋 1 雙；可加拖鞋或涼鞋。",
+      "江南 6 月濕熱易雨，帶折傘或輕雨衣。",
+      "帽子、墨鏡、防曬；衣物選快乾材質。",
+    ],
+  },
+  {
+    title: "隨身包",
+    highlight: "證件、電池、藥品不要托運",
+    items: [
+      "護照、台胞證、機票、訂房截圖放隨身。",
+      "手機、錢包、眼鏡、常備藥放隨身。",
+      "行動電源只放隨身，容量標示要清楚。",
+      "液體每瓶 100ml 內，集中透明夾鏈袋。",
+      "隨身放 1 套換洗衣物，防托運延誤。",
+    ],
+  },
+  {
+    title: "托運",
+    highlight: "刀剪、工具、大瓶液體放托運",
+    items: [
+      "剪刀、刀具、指甲刀、工具類放托運。",
+      "大瓶洗沐、防曬、噴霧放托運並包防漏。",
+      "酒類、醬料、液體伴手禮優先托運。",
+      "充電式行李箱需可拆電池；電池隨身。",
+      "貴重物品、現金、證件不要托運。",
+    ],
+  },
+  {
+    title: "不要帶",
+    highlight: "危險品與不明物品直接不帶",
+    items: [
+      "打火機、火柴、瓦斯罐、燃料不要帶。",
+      "爆竹、煙火、易燃品、強腐蝕品不要帶。",
+      "防狼噴霧、辣椒水不要帶。",
+      "超過 160Wh 的電池或大型電源不要帶。",
+      "生鮮肉品、植物種子、違禁藥品不要帶。",
+    ],
+  },
+  {
+    title: "網路與支付",
+    highlight: "出國前先測好",
+    items: [
+      "確認漫遊或 eSIM，可在中國使用。",
+      "常用 App、地圖、翻譯先下載好。",
+      "訂房、航班、飯店地址截圖離線保存。",
+      "準備可用支付方式，也留少量人民幣現金。",
+      "家人先約好集合點與失聯時聯絡方式。",
+    ],
+  },
+  {
+    title: "出發前一天",
+    highlight: "最後檢查一次",
+    items: [
+      "查天氣、航班、飯店地址與接送時間。",
+      "手機、相機、行動電源全部充滿。",
+      "藥品保留藥袋；處方藥帶證明更安心。",
+      "行李掛名牌，拍照留存行李外觀。",
+      "確認每人隨身包都有證件與充電線。",
+    ],
+  },
+];
+
+const preDepartureSources = [
+  {
+    label: "國航行李限制",
+    url: "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/limit/",
+  },
+  {
+    label: "機場安檢規定",
+    url: "https://www.kia.gov.tw/EN/FACNSER-onboard.html",
+  },
+  {
+    label: "鋰電池規定",
+    url: "https://www.faa.gov/hazmat/packsafe/airline-passengers-and-batteries",
+  },
+  {
+    label: "杭州六月氣候",
+    url: "https://tw.weatherspark.com/m/135673/6/%E6%9D%AD%E5%B7%9E%E5%B8%82%E3%80%81%E4%B8%AD%E5%9C%8B%E7%9A%846%E6%9C%88%E5%B9%B3%E5%9D%87%E5%A4%A9%E6%B0%A3",
+  },
 ];

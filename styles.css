@@ -654,6 +654,30 @@ h3 {
   border: 1px solid rgba(24, 33, 31, 0.1);
 }
 
+.place-link {
+  display: inline-flex;
+  width: 100%;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1.35;
+  text-align: center;
+  background: var(--hangzhou);
+  border-radius: 999px;
+  overflow-wrap: anywhere;
+}
+
+.place-link:hover,
+.place-link:focus-visible {
+  background: var(--ink);
+  outline: none;
+}
+
 .place-card {
   overflow: hidden;
 }
@@ -743,6 +767,71 @@ h3 {
   text-transform: uppercase;
 }
 
+.preparation-section {
+  padding-top: 40px;
+}
+
+.prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.prep-card {
+  min-height: 260px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid rgba(24, 33, 31, 0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.prep-card h3 {
+  margin: 8px 0 12px;
+}
+
+.prep-label {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 850;
+  background: var(--shanghai);
+  border-radius: 999px;
+}
+
+.prep-card ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.prep-card li::marker {
+  color: var(--gold);
+}
+
+.prep-source-note {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.prep-source-note a {
+  color: var(--shanghai);
+  font-weight: 850;
+}
+
+.prep-source-note a:hover,
+.prep-source-note a:focus-visible {
+  color: var(--ink);
+  outline: none;
+}
+
 .bottom-nav {
   position: fixed;
   right: 14px;
@@ -750,7 +839,7 @@ h3 {
   left: 14px;
   z-index: 25;
   display: none;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   overflow: hidden;
   background: rgba(24, 33, 31, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -810,6 +899,7 @@ h3 {
   .dashboard-grid,
   .hotel-grid,
   .place-grid,
+  .prep-grid,
   .transport-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -872,6 +962,7 @@ h3 {
   .dashboard-grid,
   .hotel-grid,
   .place-grid,
+  .prep-grid,
   .transport-layout {
     grid-template-columns: 1fr;
   }
