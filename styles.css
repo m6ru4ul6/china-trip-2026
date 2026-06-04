@@ -317,6 +317,7 @@ h3 {
 .metric-card,
 .panel,
 .hotel-card,
+.food-card,
 .place-card,
 .checklist-shell {
   background: var(--surface);
@@ -408,11 +409,13 @@ h3 {
 }
 
 .place-card h3,
+.food-card h3,
 .hotel-card h3 {
   margin-bottom: 8px;
 }
 
 .place-card p,
+.food-card p,
 .hotel-card p,
 .panel p {
   color: var(--muted);
@@ -599,6 +602,7 @@ h3 {
 }
 
 .hotel-grid,
+.food-grid,
 .place-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -607,6 +611,86 @@ h3 {
 
 .hotel-card {
   padding: 20px;
+}
+
+.food-card {
+  display: grid;
+  align-content: start;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.food-card img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: #d8ddd9;
+}
+
+.food-content {
+  padding: 20px;
+}
+
+.food-details {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.food-details strong {
+  color: var(--ink);
+}
+
+.food-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.food-group {
+  padding: 12px;
+  background: #f3f6f4;
+  border: 1px solid rgba(24, 33, 31, 0.08);
+  border-radius: var(--radius);
+}
+
+.food-group strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.food-group ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.food-credit {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.food-credit:hover,
+.food-credit:focus-visible {
+  color: var(--shanghai);
+  outline: none;
+}
+
+.food-group li::marker {
+  color: var(--gold);
 }
 
 .hotel-meta {
@@ -839,7 +923,7 @@ h3 {
   left: 14px;
   z-index: 25;
   display: none;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   overflow: hidden;
   background: rgba(24, 33, 31, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -898,6 +982,7 @@ h3 {
 
   .dashboard-grid,
   .hotel-grid,
+  .food-grid,
   .place-grid,
   .prep-grid,
   .transport-layout {
@@ -907,6 +992,10 @@ h3 {
   .itinerary-board,
   .checklist-shell {
     grid-template-columns: 1fr;
+  }
+
+  .food-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .bottom-nav {
@@ -961,6 +1050,7 @@ h3 {
 
   .dashboard-grid,
   .hotel-grid,
+  .food-grid,
   .place-grid,
   .prep-grid,
   .transport-layout {
@@ -981,6 +1071,10 @@ h3 {
   }
 
   .hotel-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .food-groups {
     grid-template-columns: 1fr;
   }
 

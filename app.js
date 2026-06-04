@@ -43,6 +43,7 @@ const stayNameByCity = {
 
 let activeDayIndex = 0;
 let activeHotelFilter = "all";
+let activeFoodFilter = "all";
 let activePlaceFilter = "all";
 let checklistState = loadChecklistState();
 
@@ -313,6 +314,99 @@ function priorityLabel(priority) {
   }[priority] || "候選";
 }
 
+function foodStatusTag(status) {
+  if (status === "已定案") return plainTag(status, "gold");
+  if (status === "備選") return plainTag(status, "coral");
+  return plainTag(status, "wuzhen");
+}
+
+function renderFoodFilters() {
+  const filters = ["all", "杭州", "烏鎮", "上海", "已定案", "彈性", "備選"];
+  const container = $("#foodFilters");
+  container.replaceChildren(
+    ...filters.map((filter) => {
+      const label = filter === "all" ? "全部" : filter;
+      const button = createElement("button", `segment-button ${filter === activeFoodFilter ? "active" : ""}`, label);
+      button.type = "button";
+      button.setAttribute("aria-pressed", String(filter === activeFoodFilter));
+      button.addEventListener("click", () => {
+        activeFoodFilter = filter;
+        renderFoodFilters();
+        renderFood();
+      });
+      return button;
+    }),
+  );
+}
+
+function renderFood() {
+  const filtered = foodCandidates.filter(
+    (food) =>
+      activeFoodFilter === "all" ||
+      food.city === activeFoodFilter ||
+      food.status === activeFoodFilter,
+  );
+  const container = $("#foodGrid");
+  container.replaceChildren(
+    ...filtered.map((food) => {
+      const article = createElement("article", "food-card");
+      if (food.image) {
+        const image = document.createElement("img");
+        image.src = food.image;
+        image.alt = `${food.name} ${food.imageType || "代表圖片"}`;
+        image.loading = "lazy";
+        article.append(image);
+      }
+
+      const content = createElement("div", "food-content");
+      const tags = createElement("div", "tag-row");
+      tags.append(cityTag(food.city), foodStatusTag(food.status));
+
+      const details = createElement("div", "food-details");
+      [
+        ["餐別", food.meal],
+        ["建議", food.day],
+        ["特色", food.specialties],
+      ].forEach(([label, value]) => {
+        const row = createElement("div");
+        row.append(createElement("strong", "", `${label}：`), document.createTextNode(value));
+        details.append(row);
+      });
+
+      content.append(
+        tags,
+        createElement("h3", "", food.name),
+        createElement("p", "", food.reason),
+        details,
+      );
+      if (food.groups) {
+        const groups = createElement("div", "food-groups");
+        food.groups.forEach((group) => {
+          const groupCard = createElement("div", "food-group");
+          const list = document.createElement("ul");
+          group.items.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            list.append(li);
+          });
+          groupCard.append(createElement("strong", "", group.title), list);
+          groups.append(groupCard);
+        });
+        content.append(groups);
+      }
+      if (food.imageSource) {
+        const credit = createElement("a", "food-credit", `圖片：${food.imageSource.label}`);
+        credit.href = food.imageSource.url;
+        credit.target = "_blank";
+        credit.rel = "noopener noreferrer";
+        content.append(credit);
+      }
+      article.append(content);
+      return article;
+    }),
+  );
+}
+
 function renderPlaceFilters() {
   const filters = ["all", "杭州", "烏鎮", "上海", "必排", "可選"];
   const container = $("#placeFilters");
@@ -474,6 +568,8 @@ function init() {
   renderTransfers();
   renderHotelFilters();
   renderHotels();
+  renderFoodFilters();
+  renderFood();
   renderPlaceFilters();
   renderPlaces();
   renderChecklist();
